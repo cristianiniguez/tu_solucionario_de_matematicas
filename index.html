@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tu Solucionario de Matemáticas</title>
     <!-- NORMALIZE -->
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <!-- CUSTOM CSS -->
@@ -19,13 +19,14 @@
         <!-- Navbar -->
         <nav>
             <div class="nav-container container">
-                <a href="index.html"><img src="https://i.imgur.com/hLiQ84C.png" alt="tusoldemate" height="40"></a>
-                <ul class="nav-menu">
+                <a href="index.html"><img src="img/logo-tusoldemate.png" alt="tusoldemate" height="40"></a>
+                <ul id="nav-menu" class="nav-menu">
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="#">Materias</a></li>
                     <li><a href="#">Ejercicios</a></li>
                     <li><a href="#">Acerca de</a></li>
                 </ul>
+                <i id="nav-menu-btn" class="nav-menu-btn fas fa-bars"></i>
             </div>
         </nav>
         <!-- Welcome -->
@@ -48,7 +49,7 @@
                 <h2>Últimos cursos</h2>
                 <div class="courses-container">
                     <div class="course">
-                        <img src="https://i.imgur.com/Hsdnj4r.jpg" alt="Curso1">
+                        <img src="img/course1.jpg" alt="Curso1">
                         <div class="course-description">
                             <h3>Curso 1</h3>
                             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, commodi!</p>
@@ -56,7 +57,7 @@
                         </div>
                     </div>
                     <div class="course">
-                        <img src="https://i.imgur.com/RoVd3RH.jpg" alt="Curso2">
+                        <img src="img/course2.jpg" alt="Curso2">
                         <div class="course-description">
                             <h3>Curso 2</h3>
                             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, commodi!</p>
@@ -64,7 +65,7 @@
                         </div>
                     </div>
                     <div class="course">
-                        <img src="https://i.imgur.com/RAwne2j.jpg" alt="Curso3">
+                        <img src="img/course3.jpg" alt="Curso3">
                         <div class="course-description">
                             <h3>Curso 3</h3>
                             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, commodi!</p>
@@ -72,7 +73,7 @@
                         </div>
                     </div>
                     <div class="course">
-                        <img src="https://i.imgur.com/RAwne2j.jpg" alt="Curso3">
+                        <img src="img/course3.jpg" alt="Curso3">
                         <div class="course-description">
                             <h3>Curso 3</h3>
                             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, commodi!</p>
@@ -86,7 +87,7 @@
                 <h2>Materias actualizadas</h2>
                 <div class="subjects-container">
                     <div class="subject">
-                        <img src="https://i.imgur.com/3Jx9s7x.jpg" alt="Materia1">
+                        <img src="img/materia1.jpg" alt="Materia1">
                         <div class="subject-description">
                             <h3>Materia 1</h3>
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, maxime hic.
@@ -96,7 +97,7 @@
                         </div>
                     </div>
                     <div class="subject">
-                        <img src="https://i.imgur.com/UzTsfFi.jpg" alt="Materia2">
+                        <img src="img/materia2.jpg" alt="Materia2">
                         <div class="subject-description">
                             <h3>Materia 2</h3>
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, maxime hic.
@@ -106,7 +107,7 @@
                         </div>
                     </div>
                     <div class="subject">
-                        <img src="https://i.imgur.com/iPQ0lYX.jpg" alt="Materia3">
+                        <img src="img/materia3.jpg" alt="Materia3">
                         <div class="subject-description">
                             <h3>Materia 3</h3>
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, maxime hic.
@@ -116,7 +117,7 @@
                         </div>
                     </div>
                     <div class="subject">
-                        <img src="https://i.imgur.com/As1yzmv.jpg" alt="Materia4">
+                        <img src="img/materia4.jpg" alt="Materia4">
                         <div class="subject-description">
                             <h3>Materia 4</h3>
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, maxime hic.
@@ -144,6 +145,14 @@
             </section>
         </div>
     </footer>
+
+    <script>
+        const menu = document.getElementById('nav-menu')
+        const menubtn = document.getElementById('nav-menu-btn')
+        menubtn.addEventListener('click', ()=>{
+            menu.classList.toggle('show')
+        })
+    </script>
 </body>
 
 </html>
