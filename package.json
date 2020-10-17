@@ -1,0 +1,40 @@
+{
+  "name": "tu_solucionario_de_matematicas",
+  "version": "1.0.0",
+  "description": "Cursos de matemáticas gratis para estudiantes escolares y universitarios",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^5.0.0",
+    "file-loader": "^6.1.1",
+    "html-loader": "^1.3.2",
+    "html-webpack-plugin": "^5.0.0-alpha.5",
+    "mini-css-extract-plugin": "^1.0.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.1.3",
+    "webpack-cli": "^4.0.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve --mode development --env development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristianiniguez/tu_solucionario_de_matematicas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cristianiniguez/tu_solucionario_de_matematicas/issues"
+  },
+  "homepage": "https://github.com/cristianiniguez/tu_solucionario_de_matematicas#readme"
+}

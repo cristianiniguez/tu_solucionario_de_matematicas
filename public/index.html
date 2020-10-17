@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tu Solucionario de Matemáticas</title>
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Navbar -->
+      <nav>
+        <div class="nav-container container">
+          <a href="index.html"
+            ><img src="img/logo-tusoldemate.png" alt="tusoldemate" height="40"
+          /></a>
+          <ul id="nav-menu" class="nav-menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#">Materias</a></li>
+            <li><a href="#">Ejercicios</a></li>
+            <li><a href="#">Acerca de</a></li>
+          </ul>
+          <i id="nav-menu-btn" class="nav-menu-btn fas fa-bars"></i>
+        </div>
+      </nav>
+      <!-- Welcome -->
+      <div class="welcome-container container">
+        <h1>
+          Bienvenido a <br /><span>tu</span> <span>solucionario</span> de <span>matemáticas</span>
+        </h1>
+        <p>Cursos de matemáticas gratis para estudiantes escolares y universitarios</p>
+        <!-- Botones principales -->
+        <div class="main-buttons">
+          <a class="btn btn-start" href="#">Empezar ya!</a>
+          <a class="btn btn-subjects" href="#">Ver materias</a>
+          <a class="btn btn-exercises" href="#">Ver ejercicios</a>
+        </div>
+      </div>
+    </header>
+    <!-- Main section -->
+    <main>
+      <div class="container">
+        <!-- Ultimos cursos -->
+        <section class="last-courses">
+          <h2>Últimos cursos</h2>
+          <div class="courses-container">
+            <div class="course">
+              <img src="img/course1.jpg" alt="Curso1" />
+              <div class="course-description">
+                <h3>Curso 1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, commodi!</p>
+                <a href="#">Ver más</a>
+              </div>
+            </div>
+            <div class="course">
+              <img src="img/course2.jpg" alt="Curso2" />
+              <div class="course-description">
+                <h3>Curso 2</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, commodi!</p>
+                <a href="#">Ver más</a>
+              </div>
+            </div>
+            <div class="course">
+              <img src="img/course3.jpg" alt="Curso3" />
+              <div class="course-description">
+                <h3>Curso 3</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, commodi!</p>
+                <a href="#">Ver más</a>
+              </div>
+            </div>
+            <div class="course">
+              <img src="img/course3.jpg" alt="Curso3" />
+              <div class="course-description">
+                <h3>Curso 3</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, commodi!</p>
+                <a href="#">Ver más</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Materias actualizadas -->
+        <section class="updated-subjects">
+          <h2>Materias actualizadas</h2>
+          <div class="subjects-container">
+            <div class="subject">
+              <img src="img/materia1.jpg" alt="Materia1" />
+              <div class="subject-description">
+                <h3>Materia 1</h3>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, maxime hic.
+                  Praesentium eum blanditiis facilis!
+                </p>
+                <a href="#">Ver más</a>
+              </div>
+            </div>
+            <div class="subject">
+              <img src="img/materia2.jpg" alt="Materia2" />
+              <div class="subject-description">
+                <h3>Materia 2</h3>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, maxime hic.
+                  Praesentium eum blanditiis facilis!
+                </p>
+                <a href="#">Ver más</a>
+              </div>
+            </div>
+            <div class="subject">
+              <img src="img/materia3.jpg" alt="Materia3" />
+              <div class="subject-description">
+                <h3>Materia 3</h3>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, maxime hic.
+                  Praesentium eum blanditiis facilis!
+                </p>
+                <a href="#">Ver más</a>
+              </div>
+            </div>
+            <div class="subject">
+              <img src="img/materia4.jpg" alt="Materia4" />
+              <div class="subject-description">
+                <h3>Materia 4</h3>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, maxime hic.
+                  Praesentium eum blanditiis facilis!
+                </p>
+                <a href="#">Ver más</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container container">
+        <section class="footer-section social-links">
+          <h3>Redes sociales</h3>
+          <a href="#"><i class="fab fa-facebook"></i>Facebook</a>
+          <a href="#"><i class="fab fa-youtube"></i>Youtube</a>
+        </section>
+        <section class="footer-section about">
+          <h3>Acerca de</h3>
+          <a href="#"><i class="fas fa-question-circle"></i>¿Qué es ... ?</a>
+          <a href="#"><i class="fas fa-question-circle"></i>¿Quién es ... ?</a>
+        </section>
+      </div>
+    </footer>
+
+    <script>
+      const menu = document.getElementById('nav-menu');
+      const menubtn = document.getElementById('nav-menu-btn');
+      menubtn.addEventListener('click', () => {
+        menu.classList.toggle('show');
+      });
+    </script>
+  </body>
+</html>
