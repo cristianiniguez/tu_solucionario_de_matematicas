@@ -1,0 +1,22 @@
+.hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero__container {
+  padding: 4em 1em;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.hero__description {
+  font-weight: bold;
+}
+
+.hero__buttons {
+  display: flex;
+  justify-content: center;
+}
+.hero__buttons .btn {
+  margin: 1em 2em;
+}

@@ -31,6 +31,10 @@ main {
   flex-grow: 1;
 }
 
+main section {
+  padding: 0 16px;
+}
+
 .container {
   max-width: 1024px;
   margin: 0 auto;
@@ -38,4 +42,52 @@ main {
 
 .title {
   font-family: var(--ComicNeue);
+}
+
+.text--red {
+  color: var(--red-color);
+}
+
+.text--green {
+  color: var(--green-color);
+}
+
+.text--blue {
+  color: var(--blue-color);
+}
+
+.btn {
+  font-family: var(--ComicNeue);
+  font-size: 1rem;
+  border-radius: 25px;
+  min-width: 160px;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.btn:hover {
+  box-shadow: inset 0 -0.2em 0.1em rgba(0, 0, 0, 0.25);
+}
+
+.btn--red {
+  background-color: var(--red-color);
+  color: var(--white);
+}
+
+.btn--green {
+  background-color: var(--green-color);
+  color: var(--white);
+}
+
+.btn--blue {
+  background-color: var(--blue-color);
+  color: var(--white);
+}
+
+.btn--gray {
+  background-color: var(--dark-gray);
+  color: var(--white);
 }
