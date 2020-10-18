@@ -2,6 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 
+const devMode = process.env.NODE_ENV !== 'production';
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -18,23 +20,19 @@ module.exports = {
         exclude: /node_modules/,
         use: 'babel-loader',
       },
-      //     {
-      //       test: /\.html$/,
-      //       use: 'html-loader',
-      //     },
       {
         test: /\.css$/,
-        use: [{ loader: MiniCSSExtractPlugin.loader }, 'css-loader'],
+        use: [devMode ? 'style-loader' : MiniCSSExtractPlugin.loader, 'css-loader'],
       },
-      //     {
-      //       test: /\.(png|gif|jpg)$/,
-      //       use: [
-      //         {
-      //           loader: 'file-loader',
-      //           options: { name: 'assets/[hash].[ext]' },
-      //         },
-      //       ],
-      //     },
+      {
+        test: /\.(png|gif|jpg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: { name: 'assets/[hash].[ext]' },
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -43,7 +41,7 @@ module.exports = {
       filename: './index.html',
     }),
     new MiniCSSExtractPlugin({
-      filename: 'assets/[name].css',
+      filename: 'bundle.css',
     }),
   ],
 };
