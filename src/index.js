@@ -1,4 +1,6 @@
-import './assets/styles/styles.css';
-import './assets/styles/normalize.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-console.log('hello');
+import App from './router/App';
+
+ReactDOM.render(<App />, document.getElementById('app'));
