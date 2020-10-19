@@ -1,0 +1,24 @@
+.home-section__container {
+  padding: 16px 0;
+}
+
+.home-section__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.home-article {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.home-article__img {
+  display: block;
+  width: 100%;
+}
+
+.home-article__info {
+  margin: 0 1em 1em;
+}

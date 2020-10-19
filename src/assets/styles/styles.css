@@ -44,6 +44,11 @@ main section {
   font-family: var(--ComicNeue);
 }
 
+.title-center {
+  font-family: var(--ComicNeue);
+  text-align: center;
+}
+
 .text--red {
   color: var(--red-color);
 }
