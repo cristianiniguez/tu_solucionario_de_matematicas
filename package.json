@@ -4,6 +4,7 @@
   "description": "Cursos de matemáticas gratis para estudiantes escolares y universitarios",
   "main": "index.js",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-router-dom": "^5.2.0"

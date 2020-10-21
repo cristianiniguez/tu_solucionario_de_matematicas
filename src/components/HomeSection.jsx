@@ -15,7 +15,7 @@ const HomeSection = ({ sectionTitle, sectionData }) => {
               <div className='home-article__info'>
                 <h3 className='home-article__title title-center'>{data.title}</h3>
                 <p className='home-article__description'>{data.description}</p>
-                <Link className='home-article__link btn btn--gray' to='#'>
+                <Link className='home-article__link btn btn--gray' to={`/cursos/${data.id}`}>
                   Ver más
                 </Link>
               </div>
