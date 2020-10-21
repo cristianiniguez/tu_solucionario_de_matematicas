@@ -1,12 +1,12 @@
 .hero {
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 0 2em;
 }
 
 .hero__container {
-  padding: 4em 1em;
+  padding: 1em 0;
   text-align: center;
-  font-size: 1.5em;
 }
 
 .hero__description {
@@ -14,9 +14,33 @@
 }
 
 .hero__buttons {
-  display: flex;
-  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
 }
+
 .hero__buttons .btn {
-  margin: 1em 2em;
+  margin: 1em;
+}
+
+@media screen and (min-width: 480px) {
+}
+@media screen and (min-width: 768px) {
+  .hero__container {
+    font-size: 1.25em;
+    padding: 2em 1em;
+    text-align: center;
+  }
+  .hero__buttons {
+    display: flex;
+    justify-content: center;
+  }
+  .hero__buttons .btn {
+    margin: 1em 2em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero__container {
+    padding: 4em 1em;
+    font-size: 1.5em;
+  }
 }
