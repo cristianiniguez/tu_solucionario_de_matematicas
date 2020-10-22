@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from '../pages/Home';
+import Course from '../pages/Course';
+import NotFound from '../pages/NotFound';
 import Layout from '../components/Layout';
 
 import '../assets/styles/styles.css';
@@ -12,6 +14,8 @@ const App = () => (
     <Layout>
       <Switch>
         <Route exact path='/' component={Home} />
+        <Route exact path='/curso/:id' component={Course} />
+        <Route component={NotFound} />
       </Switch>
     </Layout>
   </BrowserRouter>
