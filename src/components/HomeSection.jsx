@@ -14,8 +14,7 @@ const HomeSection = ({ sectionTitle, sectionData }) => {
               <img className='home-article__img' src={data.imgSrc} alt={data.imgAlt} />
               <div className='home-article__info'>
                 <h3 className='home-article__title title-center'>{data.title}</h3>
-                <p className='home-article__description'>{data.description}</p>
-                <Link className='home-article__link btn btn--gray' to={`/cursos/${data.id}`}>
+                <Link className='home-article__link btn btn--gray' to={`/curso/${data.id}`}>
                   Ver más
                 </Link>
               </div>
