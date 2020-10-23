@@ -1,0 +1,35 @@
+.course-section {
+  padding: 16px;
+}
+
+.course-section__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.course {
+  color: var(--black);
+  text-decoration: none;
+  padding: 16px;
+  border: 1px solid var(--light-gray);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s ease box-shadow;
+}
+
+.course:hover {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+.course__link {
+  font-size: 3em;
+  color: var(--light-gray);
+  transition: 0.3s ease color;
+}
+
+.course:hover .course__link {
+  color: var(--black);
+}
