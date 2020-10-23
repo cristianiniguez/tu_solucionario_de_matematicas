@@ -15,3 +15,24 @@ export const getPlaylists = async () => {
     description: item.snippet.localized.description,
   }));
 };
+
+export const getTitleFromPlaylist = async (id) => {
+  const response = await fetch(`${BASE_URL}/playlists?key=${API_KEY}&id=${id}&part=snippet`);
+  const data = await response.json();
+  const playlist = data.items.filter((item) => item.snippet.channelId === CHANNEL_ID);
+  return playlist[0] ? playlist[0].snippet.title : '';
+};
+
+export const getVideosFromPlaylist = async (id) => {
+  const response = await fetch(
+    `${BASE_URL}/playlistItems?key=${API_KEY}&playlistId=${id}&part=snippet,id`,
+  );
+  const data = await response.json();
+  return data.items
+    .filter((item) => item.snippet.channelId === CHANNEL_ID)
+    .map((item) => ({
+      id: item.id,
+      videoId: item.snippet.resourceId.videoId,
+      title: item.snippet.title,
+    }));
+};
