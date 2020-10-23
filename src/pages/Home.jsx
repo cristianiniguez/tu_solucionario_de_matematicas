@@ -3,11 +3,6 @@ import React from 'react';
 import Hero from '../components/Hero';
 import HomeSection from '../components/HomeSection';
 
-import course1 from '../assets/images/course1.jpg';
-import course2 from '../assets/images/course2.jpg';
-import course3 from '../assets/images/course3.jpg';
-import course4 from '../assets/images/course3.jpg';
-
 import materia1 from '../assets/images/materia1.jpg';
 import materia2 from '../assets/images/materia2.jpg';
 import materia3 from '../assets/images/materia3.jpg';
@@ -15,7 +10,7 @@ import materia4 from '../assets/images/materia4.jpg';
 
 import { getPlaylists } from '../api';
 
-const Home = () => {
+const getCourses = () => {
   const [state, setState] = React.useState({
     lastCourses: [],
     lastSubjects: [
@@ -52,6 +47,11 @@ const Home = () => {
   React.useEffect(() => {
     getPlaylists().then((data) => setState({ ...state, lastCourses: data }));
   }, []);
+  return state;
+};
+
+const Home = () => {
+  const state = getCourses();
   return (
     <main>
       <Hero />

@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { getTitleFromPlaylist, getVideosFromPlaylist } from '../api';
 
-const Course = (props) => {
-  const id = props.match.params.id;
+const getVideos = (id) => {
   const [state, setState] = React.useState({ title: '', videos: [] });
   React.useEffect(() => {
     getTitleFromPlaylist(id).then((dataTitle) => {
@@ -13,6 +12,11 @@ const Course = (props) => {
       );
     });
   }, []);
+  return state;
+};
+
+const Course = (props) => {
+  const state = getVideos(props.match.params.id);
   return (
     <main>
       <section className='course-section'>
