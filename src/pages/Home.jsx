@@ -10,55 +10,68 @@ import materia4 from '../assets/images/materia4.jpg';
 
 import { getPlaylists } from '../api';
 
-const getCourses = () => {
-  const [state, setState] = React.useState({
-    lastCourses: [],
-    lastSubjects: [
-      {
-        id: 1,
-        imgSrc: materia1,
-        imgAlt: 'Materia 1',
-        title: 'Materia 1',
-        description: 'lorem ipsum dolor',
-      },
-      {
-        id: 2,
-        imgSrc: materia2,
-        imgAlt: 'Materia 2',
-        title: 'Materia 2',
-        description: 'lorem ipsum dolor',
-      },
-      {
-        id: 3,
-        imgSrc: materia3,
-        imgAlt: 'Materia 3',
-        title: 'Materia 3',
-        description: 'lorem ipsum dolor',
-      },
-      {
-        id: 4,
-        imgSrc: materia4,
-        imgAlt: 'Materia 4',
-        title: 'Materia 4',
-        description: 'lorem ipsum dolor',
-      },
-    ],
-  });
-  React.useEffect(() => {
-    getPlaylists().then((data) => setState({ ...state, lastCourses: data }));
-  }, []);
-  return state;
-};
-
-const Home = () => {
-  const state = getCourses();
-  return (
-    <main>
-      <Hero />
-      <HomeSection sectionTitle='Últimos cursos' sectionData={state.lastCourses} />
-      <HomeSection sectionTitle='Materias actualizadas' sectionData={state.lastSubjects} />
-    </main>
-  );
-};
+class Home extends React.Component {
+  state = {
+    loading: true,
+    error: null,
+    data: {
+      lastCourses: [],
+      lastSubjects: [],
+    },
+  };
+  componentDidMount() {
+    this.fetchData();
+  }
+  fetchData = async () => {
+    this.setState({ loading: true, error: null });
+    try {
+      const lastCourses = await getPlaylists();
+      const lastSubjects = [
+        {
+          id: 1,
+          imgSrc: materia1,
+          imgAlt: 'Materia 1',
+          title: 'Materia 1',
+          description: 'lorem ipsum dolor',
+        },
+        {
+          id: 2,
+          imgSrc: materia2,
+          imgAlt: 'Materia 2',
+          title: 'Materia 2',
+          description: 'lorem ipsum dolor',
+        },
+        {
+          id: 3,
+          imgSrc: materia3,
+          imgAlt: 'Materia 3',
+          title: 'Materia 3',
+          description: 'lorem ipsum dolor',
+        },
+        {
+          id: 4,
+          imgSrc: materia4,
+          imgAlt: 'Materia 4',
+          title: 'Materia 4',
+          description: 'lorem ipsum dolor',
+        },
+      ];
+      const data = { lastCourses, lastSubjects };
+      this.setState({ loading: false, data: data });
+    } catch (error) {
+      this.setState({ loading: false, error: error });
+    }
+  };
+  render() {
+    const { lastCourses, lastSubjects } = this.state.data;
+    return (
+      <main>
+        <Hero />
+        <HomeSection sectionTitle='Últimos cursos' sectionData={lastCourses} />
+        <HomeSection sectionTitle='Materias actualizadas' sectionData={lastSubjects} />
+      </main>
+    );
+  }
+}
 
 export default Home;
