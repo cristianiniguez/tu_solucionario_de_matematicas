@@ -63,12 +63,26 @@ class Home extends React.Component {
     }
   };
   render() {
-    const { lastCourses, lastSubjects } = this.state.data;
+    const {
+      loading,
+      error,
+      data: { lastCourses, lastSubjects },
+    } = this.state;
     return (
       <main>
         <Hero />
-        <HomeSection sectionTitle='Últimos cursos' sectionData={lastCourses} />
-        <HomeSection sectionTitle='Materias actualizadas' sectionData={lastSubjects} />
+        <HomeSection
+          sectionTitle='Últimos cursos'
+          sectionData={lastCourses}
+          sectionLoading={loading}
+          sectionError={error}
+        />
+        <HomeSection
+          sectionTitle='Materias actualizadas'
+          sectionData={lastSubjects}
+          sectionLoading={loading}
+          sectionError={error}
+        />
       </main>
     );
   }
