@@ -11,9 +11,14 @@
 }
 
 .home-article {
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-  border-radius: 1em;
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
   overflow: hidden;
+  transition: 0.3s ease box-shadow;
+}
+
+.home-article:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
 }
 
 .home-article__img {
