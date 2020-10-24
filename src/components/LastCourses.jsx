@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Loading from './Loading';
 import Error from './Error.jsx';
 
-import '../assets/styles/components/HomeSection.css';
+import '../assets/styles/components/LastCourses.css';
 
 import { getLastPlaylists } from '../api';
 
@@ -36,22 +36,22 @@ export class LastCourses extends React.Component {
       data: { courses },
     } = this.state;
     return (
-      <section className='home-section'>
-        <div className='home-section__container container'>
-          <h2 className='home-section__title title-center'>Últimos cursos</h2>
+      <section className='last-courses'>
+        <div className='last-courses__container container'>
+          <h2 className='last-courses__title title-center'>Últimos cursos</h2>
           {loading ? (
             <Loading />
           ) : error ? (
             <Error>{error.message}</Error>
           ) : (
-            <div className='home-section__grid'>
+            <div className='last-courses__grid'>
               {courses.length > 0 ? (
                 courses.map((course) => (
-                  <article key={course.id} className='home-article'>
-                    <img className='home-article__img' src={course.imgSrc} alt={course.imgAlt} />
-                    <div className='home-article__info'>
-                      <h3 className='home-article__title title-center'>{course.title}</h3>
-                      <Link className='home-article__link btn btn--gray' to={`/curso/${course.id}`}>
+                  <article key={course.id} className='last-course'>
+                    <img className='last-course__img' src={course.imgSrc} alt={course.imgAlt} />
+                    <div className='last-course__info'>
+                      <h3 className='last-course__title title-center'>{course.title}</h3>
+                      <Link className='last-course__link btn btn--gray' to={`/curso/${course.id}`}>
                         Ver más
                       </Link>
                     </div>

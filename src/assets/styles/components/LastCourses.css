@@ -1,0 +1,49 @@
+.last-courses__container {
+  padding: 16px 0;
+}
+
+.last-courses__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.last-course {
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: 0.3s ease box-shadow;
+  display: flex;
+  flex-direction: column;
+}
+
+.last-course:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.last-course__img {
+  display: block;
+  width: 100%;
+}
+
+.last-course__info {
+  padding: 0 1em 1em;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .last-courses__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .last-courses__grid {
+    grid-template-columns: repeat(4, 1fr);
+    width: 90%;
+  }
+}

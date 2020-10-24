@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Loading from './Loading';
 import Error from './Error.jsx';
 
-import '../assets/styles/components/HomeSection.css';
+import '../assets/styles/components/LastSubjects.css';
 
 import materia1 from '../assets/images/materia1.jpg';
 import materia2 from '../assets/images/materia2.jpg';
@@ -70,23 +70,23 @@ export class LastSubjects extends React.Component {
       data: { subjects },
     } = this.state;
     return (
-      <section className='home-section'>
-        <div className='home-section__container container'>
-          <h2 className='home-section__title title-center'>Materias actualizadas</h2>
+      <section className='last-subjects'>
+        <div className='last-subjects__container container'>
+          <h2 className='last-subjects__title title-center'>Materias actualizadas</h2>
           {loading ? (
             <Loading />
           ) : error ? (
             <Error>{error.message}</Error>
           ) : (
-            <div className='home-section__grid'>
+            <div className='last-subjects__grid'>
               {subjects.length > 0 ? (
                 subjects.map((subject) => (
-                  <article key={subject.id} className='home-article'>
-                    <img className='home-article__img' src={subject.imgSrc} alt={subject.imgAlt} />
-                    <div className='home-article__info'>
-                      <h3 className='home-article__title title-center'>{subject.title}</h3>
+                  <article key={subject.id} className='last-subject'>
+                    <img className='last-subject__img' src={subject.imgSrc} alt={subject.imgAlt} />
+                    <div className='last-subject__info'>
+                      <h3 className='last-subject__title title-center'>{subject.title}</h3>
                       <Link
-                        className='home-article__link btn btn--gray'
+                        className='last-subject__link btn btn--gray'
                         to={`/materia/${subject.id}`}
                       >
                         Ver más
