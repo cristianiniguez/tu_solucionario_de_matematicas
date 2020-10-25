@@ -40,7 +40,7 @@ main {
 }
 
 main section {
-  padding: 0 16px;
+  padding: 0 32px;
 }
 
 .container {
@@ -48,11 +48,13 @@ main section {
   margin: 0 auto;
 }
 
-.title {
+.title,
+.subtitle {
   font-family: var(--ComicNeue);
 }
 
-.title-center {
+.title-center,
+.subtitle-center {
   font-family: var(--ComicNeue);
   text-align: center;
 }
