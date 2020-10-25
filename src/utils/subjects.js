@@ -5,31 +5,37 @@ import logo_trigonometria from '../assets/images/trigonometria.png';
 import logo_calculo from '../assets/images/calculo.png';
 import logo_olimpiadas from '../assets/images/olimpiadas.png';
 
-const subjects = {
+const allSubjects = {
   aritmetica: {
+    id: 101,
+    name: 'ARITMÉTICA',
     logo: logo_aritmetica,
-    color: 'var(--aritmetica-color)',
   },
   algebra: {
+    id: 102,
+    name: 'ALGEBRA',
     logo: logo_algebra,
-    color: 'var(--algebra-color)',
   },
   geometria: {
+    id: 103,
+    name: 'GEOMETRÍA',
     logo: logo_geometria,
-    color: 'var(--geometria-color)',
   },
   trigonometria: {
+    id: 104,
+    name: 'TRIGONOMETRÍA',
     logo: logo_trigonometria,
-    color: 'var(--trigonometria-color)',
   },
   calculo: {
+    id: 105,
+    name: 'CÁLCULO',
     logo: logo_calculo,
-    color: 'var(--calculo-color)',
   },
   olimpiadas: {
+    id: 201,
+    name: 'OLIMPIADAS',
     logo: logo_olimpiadas,
-    color: 'var(--olimpiadas-color)',
   },
 };
 
-export default subjects;
+export default allSubjects;

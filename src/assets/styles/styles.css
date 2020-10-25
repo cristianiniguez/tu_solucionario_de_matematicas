@@ -69,6 +69,30 @@ main section {
   color: var(--blue-color);
 }
 
+.title--aritmetica {
+  color: var(--aritmetica-color);
+}
+
+.title--algebra {
+  color: var(--algebra-color);
+}
+
+.title--geometria {
+  color: var(--geometria-color);
+}
+
+.title--trigonometria {
+  color: var(--trigonometria-color);
+}
+
+.title--calculo {
+  color: var(--calculo-color);
+}
+
+.title--olimpiadas {
+  color: var(--olimpiadas-color);
+}
+
 .btn {
   font-family: var(--ComicNeue);
   font-size: 1rem;
