@@ -6,6 +6,7 @@
   --red-color: #eb5757;
   --green-color: #219653;
   --blue-color: #2f80ed;
+  --yellow-color: #f2c94c;
   --white: white;
   --light-gray: #d3d3d3;
   --dark-gray: #696969;
@@ -15,6 +16,13 @@
   /* Fuentes */
   --OpenSans: 'Open Sans', sans-serif;
   --ComicNeue: 'Comic Neue', cursive;
+  /* Subjects */
+  --aritmetica-color: var(--red-color);
+  --algebra-color: var(--blue-color);
+  --geometria-color: var(--green-color);
+  --trigonometria-color: var(--yellow-color);
+  --calculo-color: var(--green-color);
+  --olimpiadas-color: var(--black-color);
 }
 
 body {
