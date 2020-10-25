@@ -27,6 +27,8 @@ export class LastSubjects extends React.Component {
   fetchData = async () => {
     this.setState({ loading: true, error: null });
     try {
+      const subjectNames = await getLastSubjects();
+      console.log(subjectNames);
       const subjects = [
         {
           id: 1,

@@ -2,12 +2,18 @@ const BASE_URL = 'https://www.googleapis.com/youtube/v3';
 const API_KEY = 'AIzaSyD9gWzf1dK89nBTYezoavBCkFYQd3Is8O8';
 const CHANNEL_ID = 'UCfndi4CyqsQc0zRzrMBgiOw';
 
-export const getAllPlaylists = async () => {
-  const response = await fetch(
-    `${BASE_URL}/playlists?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id`,
-  );
+export const getAllPlaylists = async (playlists = [], nextPageToken = null) => {
+  const url = `${BASE_URL}/playlists?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&maxResults=50${
+    nextPageToken ? '&pageToken=' + nextPageToken : ''
+  }`;
+  const response = await fetch(url);
   const data = await response.json();
-  console.log(data);
+  playlists = [...playlists, ...data.items];
+  if (data.nextPageToken) {
+    return getAllPlaylists(playlists, data.nextPageToken);
+  } else {
+    return playlists;
+  }
 };
 
 export const getLastPlaylists = async () => {
@@ -25,7 +31,9 @@ export const getLastPlaylists = async () => {
 };
 
 export const getLastSubjects = async () => {
-  return [];
+  const playlists = await getAllPlaylists();
+  const subjects = playlists.map((pl) => pl.snippet.description.match(/^(\w+)\s\//)[1]);
+  return [...new Set(subjects)].splice(0, 4);
 };
 
 export const getTitleFromPlaylist = async (id) => {
