@@ -56,3 +56,18 @@ export const getVideosFromPlaylist = async (id) => {
       title: item.snippet.title,
     }));
 };
+
+export const getPlaylistsFromSubject = async (subject) => {
+  const allPlaylists = await getAllPlaylists();
+  const data = allPlaylists.filter(
+    (pl) => pl.snippet.description.match(/^(\w+)\s\//)[1].toLowerCase() === subject,
+  );
+  return data
+    .map((item) => ({
+      id: item.id,
+      imgSrc: item.snippet.thumbnails.maxres.url,
+      imgAlt: item.snippet.localized.title,
+      title: item.snippet.localized.title,
+    }))
+    .reverse();
+};
