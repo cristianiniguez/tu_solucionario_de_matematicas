@@ -1,37 +1,28 @@
+import KEYS from './keys';
+
 const BASE_URL = 'https://www.googleapis.com/youtube/v3';
-const API_KEY = 'AIzaSyD9gWzf1dK89nBTYezoavBCkFYQd3Is8O8';
+const API_KEY = KEYS.YOUTUBE_API_KEY;
 const CHANNEL_ID = 'UCfndi4CyqsQc0zRzrMBgiOw';
 
-export const getAllPlaylists = async (playlists = [], nextPageToken = null) => {
-  const url = `${BASE_URL}/playlists?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&maxResults=50${
-    nextPageToken ? '&pageToken=' + nextPageToken : ''
-  }`;
+const getPlaylists = async (n) => {
+  const url = `${BASE_URL}/playlists?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&maxResults=${n}`;
   const response = await fetch(url);
   const data = await response.json();
-  playlists = [...playlists, ...data.items];
-  if (data.nextPageToken) {
-    return getAllPlaylists(playlists, data.nextPageToken);
-  } else {
-    return playlists;
-  }
+  return data.items;
 };
 
 export const getLastPlaylists = async () => {
-  const response = await fetch(
-    `${BASE_URL}/playlists?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&maxResults=4`,
-  );
-  const data = await response.json();
-  return data.items.map((item) => ({
+  const items = await getPlaylists(4);
+  return items.map((item) => ({
     id: item.id,
     imgSrc: item.snippet.thumbnails.maxres.url,
     imgAlt: item.snippet.localized.title,
     title: item.snippet.localized.title,
-    description: item.snippet.localized.description,
   }));
 };
 
 export const getLastSubjects = async () => {
-  const playlists = await getAllPlaylists();
+  const playlists = await getPlaylists(12);
   const subjects = playlists.map((pl) => pl.snippet.description.match(/^(\w+)\s\//)[1]);
   return [...new Set(subjects)].splice(0, 4);
 };
@@ -58,16 +49,13 @@ export const getVideosFromPlaylist = async (id) => {
 };
 
 export const getPlaylistsFromSubject = async (subject) => {
-  const allPlaylists = await getAllPlaylists();
-  const data = allPlaylists.filter(
-    (pl) => pl.snippet.description.match(/^(\w+)\s\//)[1].toLowerCase() === subject,
-  );
-  return data
-    .map((item) => ({
-      id: item.id,
-      imgSrc: item.snippet.thumbnails.maxres.url,
-      imgAlt: item.snippet.localized.title,
-      title: item.snippet.localized.title,
-    }))
-    .reverse();
+  const url = `${BASE_URL}/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&maxResults=10&q=${subject}&type=playlist`;
+  const response = await fetch(url);
+  const data = await response.json();
+  return data.items.map((item) => ({
+    id: item.id.playlistId,
+    imgSrc: item.snippet.thumbnails.high.url,
+    imgAlt: item.snippet.title,
+    title: item.snippet.title,
+  }));
 };
