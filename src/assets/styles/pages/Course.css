@@ -2,10 +2,24 @@
   padding: 16px;
 }
 
+.course-section__subject {
+  color: var(--black);
+  text-decoration: none;
+}
+.course-section__subject:hover {
+  text-decoration: underline;
+}
+
 .course-section__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
+}
+
+.course-section__buttons {
+  margin: 16px 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .course {

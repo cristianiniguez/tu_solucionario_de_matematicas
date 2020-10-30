@@ -27,25 +27,39 @@ export const getLastSubjects = async () => {
   return [...new Set(subjects)].splice(0, 4);
 };
 
-export const getTitleFromPlaylist = async (id) => {
+export const getInfoFromPlaylist = async (id) => {
   const response = await fetch(`${BASE_URL}/playlists?key=${API_KEY}&id=${id}&part=snippet`);
   const data = await response.json();
   const playlist = data.items.filter((item) => item.snippet.channelId === CHANNEL_ID);
-  return playlist[0] ? playlist[0].snippet.title : '';
+  return playlist[0]
+    ? {
+        title: playlist[0].snippet.title,
+        subject: playlist[0].snippet.description.match(/^(\w+)\s\//)[1],
+      }
+    : {
+        title: '',
+        subject: '',
+      };
 };
 
-export const getVideosFromPlaylist = async (id) => {
-  const response = await fetch(
-    `${BASE_URL}/playlistItems?key=${API_KEY}&playlistId=${id}&part=snippet,id`,
-  );
+export const getVideosFromPlaylist = async (id, pageToken = null) => {
+  const url = `${BASE_URL}/playlistItems?key=${API_KEY}&playlistId=${id}&part=snippet,id&maxResults=10${
+    pageToken ? '&pageToken=' + pageToken : ''
+  }`;
+  const response = await fetch(url);
   const data = await response.json();
-  return data.items
+  const videos = data.items
     .filter((item) => item.snippet.channelId === CHANNEL_ID)
     .map((item) => ({
       id: item.id,
       videoId: item.snippet.resourceId.videoId,
       title: item.snippet.title,
     }));
+  const pages = {
+    previous: data.prevPageToken,
+    next: data.nextPageToken,
+  };
+  return { videos, pages };
 };
 
 export const getPlaylistsFromSubject = async (subject) => {

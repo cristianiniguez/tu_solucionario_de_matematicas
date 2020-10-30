@@ -102,13 +102,16 @@ figure {
 .btn {
   font-family: var(--ComicNeue);
   font-size: 1rem;
-  border-radius: 25px;
   min-width: 160px;
   min-height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -133,6 +136,16 @@ figure {
 .btn--gray {
   background-color: var(--dark-gray);
   color: var(--white);
+}
+
+.btn--off {
+  background-color: var(--dark-gray);
+  color: var(--white);
+}
+
+.btn--off:hover {
+  box-shadow: none;
+  cursor: default;
 }
 
 @media screen and (min-width: 480px) {

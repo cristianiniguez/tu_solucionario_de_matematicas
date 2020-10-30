@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 
-import { getTitleFromPlaylist, getVideosFromPlaylist } from '../api';
+import { getInfoFromPlaylist, getVideosFromPlaylist } from '../api';
 
 import '../assets/styles/pages/Course.css';
 
@@ -13,30 +13,43 @@ class Course extends React.Component {
     loading: true,
     error: null,
     data: {
-      title: '',
+      info: {
+        title: '',
+        subject: '',
+      },
       videos: [],
+      pages: {
+        previous: undefined,
+        next: undefined,
+      },
     },
   };
   componentDidMount() {
     this.fetchData();
   }
-  fetchData = async () => {
+  fetchData = async (pageToken = null) => {
     this.setState({ loading: true, error: null });
     try {
       const { id } = this.props.match.params;
-      const title = await getTitleFromPlaylist(id);
-      const videos = await getVideosFromPlaylist(id);
-      const data = { title, videos };
+      const info = await getInfoFromPlaylist(id);
+      const { videos, pages } = await getVideosFromPlaylist(id, pageToken);
+      const data = { info, videos, pages };
       this.setState({ loading: false, data: data });
     } catch (error) {
       this.setState({ loading: false, error: error });
     }
   };
+  prevPage = () => {
+    this.fetchData(this.state.data.pages.previous);
+  };
+  nextPage = () => {
+    this.fetchData(this.state.data.pages.next);
+  };
   render() {
     const {
       loading,
       error,
-      data: { title, videos },
+      data: { info, videos, pages },
     } = this.state;
     return (
       <main>
@@ -48,7 +61,15 @@ class Course extends React.Component {
               <Error>Ha ocurrido un error</Error>
             ) : (
               <>
-                <h1 className='course-section__title title'>{title}</h1>
+                <h1 className='course-section__title title'>
+                  <Link
+                    className='course-section__subject'
+                    to={`/materias/${info.subject.toLowerCase()}`}
+                  >
+                    {info.subject}
+                  </Link>{' '}
+                  / {info.title}
+                </h1>
                 <div className='course-section__grid'>
                   {videos.map((item) => (
                     <div key={item.id} className='course'>
@@ -60,6 +81,20 @@ class Course extends React.Component {
                       </Link>
                     </div>
                   ))}
+                </div>
+                <div className='course-section__buttons'>
+                  <button
+                    className={`btn btn--${pages.previous ? 'red' : 'off'}`}
+                    onClick={pages.previous && this.prevPage}
+                  >
+                    <i className='fas fa-arrow-left'></i>
+                  </button>
+                  <button
+                    className={`btn btn--${pages.next ? 'red' : 'off'}`}
+                    onClick={pages.next && this.nextPage}
+                  >
+                    <i className='fas fa-arrow-right'></i>
+                  </button>
                 </div>
               </>
             )}
