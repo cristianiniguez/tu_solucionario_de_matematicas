@@ -2,9 +2,10 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from '../pages/Home';
-import Course from '../pages/Course';
 import Subjects from '../pages/Subjects';
 import Subject from '../pages/Subject';
+import Course from '../pages/Course';
+import Video from '../pages/Video';
 import NotFound from '../pages/NotFound';
 import Layout from '../components/Layout';
 
@@ -19,6 +20,7 @@ const App = () => (
         <Route exact path='/materias' component={Subjects} />
         <Route exact path='/materias/:name' component={Subject} />
         <Route exact path='/curso/:id' component={Course} />
+        <Route exact path='/video/:id' component={Video} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

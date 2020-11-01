@@ -81,3 +81,25 @@ export const getPlaylistsFromSubject = async (subject) => {
     title: item.snippet.title,
   }));
 };
+
+export const getPlaylistItemFromId = async (id) => {
+  const url = `${BASE_URL}/playlistItems?key=${API_KEY}&part=snippet&id=${id}`;
+  const response = await fetch(url);
+  const data = await response.json();
+  if (data.items.length > 0) {
+    const {
+      channelId,
+      playlistId,
+      title,
+      description,
+      resourceId: { videoId },
+    } = data.items[0].snippet;
+    if (channelId === CHANNEL_ID) {
+      return { videoId, title, description, playlistId };
+    } else {
+      return {};
+    }
+  } else {
+    return {};
+  }
+};
