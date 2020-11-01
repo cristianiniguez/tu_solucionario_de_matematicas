@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import queryString from 'query-string';
 
 import Loading from '../components/Loading';
 import Error from '../components/Error';
@@ -27,11 +28,17 @@ class Course extends React.Component {
   componentDidMount() {
     this.fetchData();
   }
-  fetchData = async (pageToken = null) => {
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.location.search !== prevProps.location.search) {
+      this.fetchData();
+    }
+  }
+  fetchData = async () => {
     this.setState({ loading: true, error: null });
     try {
       const { id } = this.props.match.params;
       const info = await getInfoFromPlaylist(id);
+      const { pageToken } = queryString.parse(this.props.location.search);
       const { videos, pages } = await getVideosFromPlaylist(id, pageToken);
       const data = { info, videos, pages };
       this.setState({ loading: false, data: data });
@@ -40,10 +47,10 @@ class Course extends React.Component {
     }
   };
   prevPage = () => {
-    this.fetchData(this.state.data.pages.previous);
+    this.props.history.push(`?pageToken=${this.state.data.pages.previous}`);
   };
   nextPage = () => {
-    this.fetchData(this.state.data.pages.next);
+    this.props.history.push(`?pageToken=${this.state.data.pages.next}`);
   };
   render() {
     const {

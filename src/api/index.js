@@ -46,20 +46,28 @@ export const getVideosFromPlaylist = async (id, pageToken = null) => {
   const url = `${BASE_URL}/playlistItems?key=${API_KEY}&playlistId=${id}&part=snippet,id&maxResults=10${
     pageToken ? '&pageToken=' + pageToken : ''
   }`;
-  const response = await fetch(url);
-  const data = await response.json();
-  const videos = data.items
-    .filter((item) => item.snippet.channelId === CHANNEL_ID)
-    .map((item) => ({
-      id: item.id,
-      videoId: item.snippet.resourceId.videoId,
-      title: item.snippet.title,
-    }));
-  const pages = {
-    previous: data.prevPageToken,
-    next: data.nextPageToken,
-  };
-  return { videos, pages };
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    if (data.error) {
+      throw data.error;
+    }
+    const videos = data.items
+      .filter((item) => item.snippet.channelId === CHANNEL_ID)
+      .map((item) => ({
+        id: item.id,
+        videoId: item.snippet.resourceId.videoId,
+        title: item.snippet.title,
+      }));
+    const pages = {
+      previous: data.prevPageToken,
+      next: data.nextPageToken,
+    };
+    return { videos, pages };
+  } catch (error) {
+    console.error(`Error al obtener videos: ${error.message}`);
+    throw error;
+  }
 };
 
 export const getPlaylistsFromSubject = async (subject) => {
