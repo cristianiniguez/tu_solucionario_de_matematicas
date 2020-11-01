@@ -2,29 +2,22 @@
   text-align: center;
   background-color: var(--black);
   color: white;
-  padding: 2em;
+  padding: 0 32px;
 }
 
 .footer a {
   color: white;
-  margin-bottom: 1em;
   text-decoration: none;
 }
 
 .footer a i {
-  padding-right: 0.5em;
+  margin-right: 0.5em;
 }
 
 .footer a:hover {
   text-decoration: underline;
 }
 
-.footer__container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.footer__section {
-  display: flex;
-  flex-direction: column;
+.footer__social-link {
+  margin: 16px;
 }
