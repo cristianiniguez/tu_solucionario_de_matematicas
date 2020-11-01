@@ -56,7 +56,6 @@ export const getVideosFromPlaylist = async (id, pageToken = null) => {
       .filter((item) => item.snippet.channelId === CHANNEL_ID)
       .map((item) => ({
         id: item.id,
-        videoId: item.snippet.resourceId.videoId,
         title: item.snippet.title,
       }));
     const pages = {

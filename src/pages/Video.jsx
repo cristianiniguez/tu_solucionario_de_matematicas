@@ -48,7 +48,7 @@ export class Video extends React.Component {
             <section className='video__info'>
               <div className='container video__info-container'>
                 <h1 className='video__title title'>{data.title}</h1>
-                <p className='video__description'>{data.description}</p>
+                <p className='video__description'>{data.description.replace('\n', ' - ')}</p>
                 <Link
                   to={`/curso/${data.playlistId}`}
                   className='btn btn--green video__playlist-link'

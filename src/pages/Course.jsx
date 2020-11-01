@@ -83,7 +83,7 @@ class Course extends React.Component {
                       <h2 className='course__title title' key={item.id}>
                         {item.title}
                       </h2>
-                      <Link className='course__link' to={`/video/${item.videoId}`}>
+                      <Link className='course__link' to={`/video/${item.id}`}>
                         <i className='fas fa-play-circle'></i>
                       </Link>
                     </div>
