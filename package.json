@@ -45,7 +45,7 @@
   "bugs": {
     "url": "https://github.com/cristianiniguez/tu_solucionario_de_matematicas/issues"
   },
-  "homepage": "https://cristianiniguez.github.io/tu_solucionario_de_matematicas/",
+  "homepage": "https://tusolucionariodematematicas.herokuapp.com/",
   "engines": {
     "node": "12.x"
   }
