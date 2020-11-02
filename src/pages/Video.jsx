@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Paragraph from '../components/Paragraph';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 
@@ -48,12 +49,12 @@ export class Video extends React.Component {
             <section className='video__info'>
               <div className='container video__info-container'>
                 <h1 className='video__title title'>{data.title}</h1>
-                <p className='video__description'>{data.description.replace('\n', ' - ')}</p>
+                <Paragraph className='video__description'>{data.description}</Paragraph>
                 <Link
                   to={`/curso/${data.playlistId}`}
                   className='btn btn--green video__playlist-link'
                 >
-                  Ir a la lista
+                  Ir al curso
                 </Link>
               </div>
             </section>
