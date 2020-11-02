@@ -6,6 +6,7 @@ import Subjects from '../pages/Subjects';
 import Subject from '../pages/Subject';
 import Course from '../pages/Course';
 import Video from '../pages/Video';
+import About from '../pages/About';
 import NotFound from '../pages/NotFound';
 import Layout from '../components/Layout';
 
@@ -21,6 +22,7 @@ const App = () => (
         <Route exact path='/materias/:name' component={Subject} />
         <Route exact path='/curso/:id' component={Course} />
         <Route exact path='/video/:id' component={Video} />
+        <Route exact path='/acerca' component={About} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
