@@ -3,14 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
-const homepage = 'https://cristianiniguez.github.io/tu_solucionario_de_matematicas/';
 
 module.exports = {
   entry: ['@babel/polyfill', './src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: devMode ? '/' : homepage,
+    publicPath: '/',
   },
   devServer: {
     historyApiFallback: true,
