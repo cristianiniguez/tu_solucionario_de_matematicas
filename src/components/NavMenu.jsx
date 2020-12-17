@@ -22,11 +22,6 @@ const NavMenu = () => {
           </Link>
         </li>
         <li className='nav-menu__item'>
-          <Link className='nav-menu__link' to='/recursos' onClick={() => setActive(false)}>
-            Recursos
-          </Link>
-        </li>
-        <li className='nav-menu__item'>
           <Link className='nav-menu__link' to='/acerca' onClick={() => setActive(false)}>
             Acerca de
           </Link>

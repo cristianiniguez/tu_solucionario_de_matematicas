@@ -4,8 +4,7 @@
 
 .subject-section__grid {
   display: grid;
-  /* grid-template-columns: 1fr; */
-  gap: 24px;
+  gap: 12px;
 }
 
 .subject-course {
@@ -22,7 +21,7 @@
 }
 
 .subject-course__img {
-  width: 128px;
+  display: none;
 }
 
 .subject-course__img img {
@@ -54,4 +53,14 @@
 .subject-info p {
   font-family: var(--ComicNeue);
   color: var(--red-color);
+}
+
+@media screen and (min-width: 768px) {
+  .subject-section__grid {
+    gap: 24px;
+  }
+  .subject-course__img {
+    display: block;
+    width: 128px;
+  }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import parse from 'html-react-parser';
 
 import about from '../docs/about.md';
 
@@ -9,7 +10,7 @@ export class About extends React.Component {
     return (
       <main>
         <section className='about-section'>
-          <div className='container' dangerouslySetInnerHTML={{ __html: about }}></div>
+          <div className='container'>{parse(about)}</div>
         </section>
       </main>
     );

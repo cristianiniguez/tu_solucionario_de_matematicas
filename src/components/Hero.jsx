@@ -25,14 +25,8 @@ const Hero = () => {
           Cursos de matemáticas gratis para estudiantes escolares y universitarios
         </p>
         <div className='hero__buttons'>
-          <Link className='btn btn--red' to='/empezar'>
-            Empezar ya!
-          </Link>
           <Link className='btn btn--green' to='/materias'>
             Ver materias
-          </Link>
-          <Link className='btn btn--blue' to='/recursos'>
-            Ver recursos
           </Link>
         </div>
       </div>

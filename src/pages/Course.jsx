@@ -80,6 +80,9 @@ class Course extends React.Component {
                 <div className='course-section__grid'>
                   {videos.map((item) => (
                     <div key={item.id} className='course'>
+                      <figure className='course__img'>
+                        <img src={item.imgSrc} alt={item.title} />
+                      </figure>
                       <h2 className='course__title title' key={item.id}>
                         {item.title}
                       </h2>

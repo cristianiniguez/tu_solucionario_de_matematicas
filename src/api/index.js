@@ -55,6 +55,7 @@ export const getVideosFromPlaylist = async (id, pageToken = null) => {
       .map((item) => ({
         id: item.id,
         title: item.snippet.title,
+        imgSrc: item.snippet.thumbnails.default.url,
       }));
     const pages = {
       previous: data.prevPageToken,
