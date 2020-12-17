@@ -1,7 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
+const { EnvironmentPlugin } = require('webpack');
 
+require('dotenv').config();
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
@@ -52,5 +54,6 @@ module.exports = {
     new MiniCSSExtractPlugin({
       filename: 'bundle.css',
     }),
+    new EnvironmentPlugin(['YOUTUBE_API_KEY']),
   ],
 };

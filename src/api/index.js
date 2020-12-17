@@ -1,7 +1,5 @@
-import KEYS from './keys';
-
 const BASE_URL = 'https://www.googleapis.com/youtube/v3';
-const API_KEY = KEYS.YOUTUBE_API_KEY;
+const API_KEY = process.env.YOUTUBE_API_KEY;
 const CHANNEL_ID = 'UCfndi4CyqsQc0zRzrMBgiOw';
 
 const getPlaylists = async (n) => {
