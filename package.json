@@ -30,8 +30,6 @@
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "firebase deploy",
     "build": "cross-env NODE_ENV=production webpack",
     "dev": "webpack serve --mode development"
   },
