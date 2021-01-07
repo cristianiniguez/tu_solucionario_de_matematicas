@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
 :root {
-  /* Colores */
+  /* Colors */
   --red-color: #eb5757;
   --green-color: #219653;
   --blue-color: #2f80ed;
@@ -13,7 +13,7 @@
   --transparent-light-gray: rgba(211, 211, 211, 0.5);
   --transparent-dark-gray: rgba(105, 105, 105, 0.5);
   --black: black;
-  /* Fuentes */
+  /* Fonts */
   --OpenSans: 'Open Sans', sans-serif;
   --ComicNeue: 'Comic Neue', cursive;
   /* Subjects */
@@ -23,6 +23,11 @@
   --trigonometria-color: var(--yellow-color);
   --calculo-color: var(--green-color);
   --olimpiadas-color: var(--black-color);
+  /* Patterns */
+  --rainbow: var(--red-color), var(--red-color) 25%, var(--yellow-color) 25%,
+    var(--yellow-color) 50%, var(--blue-color) 50%, var(--blue-color) 75%, var(--green-color) 75%,
+    var(--green-color);
+  --rainbow-continuous: var(--red-color), var(--yellow-color), var(--blue-color), var(--green-color);
 }
 
 body {

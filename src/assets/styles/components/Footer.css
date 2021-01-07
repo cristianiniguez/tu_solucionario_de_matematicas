@@ -2,6 +2,16 @@
   text-align: center;
   background-color: var(--black);
   color: white;
+}
+
+.footer::before {
+  content: '';
+  display: block;
+  height: 0.75em;
+  background: linear-gradient(to right, var(--rainbow));
+}
+
+.footer__container {
   padding: 0 32px;
 }
 
