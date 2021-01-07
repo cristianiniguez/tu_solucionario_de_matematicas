@@ -32,10 +32,12 @@ export const getInfoFromPlaylist = async (id) => {
   return playlist[0]
     ? {
         title: playlist[0].snippet.title,
+        description: playlist[0].snippet.description,
         subject: playlist[0].snippet.description.match(/^(\w+)\s\//)[1],
       }
     : {
         title: '',
+        description: '',
         subject: '',
       };
 };
