@@ -1,6 +1,4 @@
-import React from 'react';
-
-import '../assets/styles/components/Footer.css';
+import { FaFacebook, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -13,7 +11,7 @@ const Footer = () => {
               href='https://www.facebook.com/tusolucionariodematematicas'
               target='_blank'
             >
-              <i className='fab fa-facebook' />
+              <FaFacebook />
               Facebook
             </a>
             <a
@@ -21,7 +19,7 @@ const Footer = () => {
               href='https://www.youtube.com/channel/UCfndi4CyqsQc0zRzrMBgiOw'
               target='_blank'
             >
-              <i className='fab fa-youtube' />
+              <FaYoutube />
               Youtube
             </a>
           </p>
@@ -29,7 +27,7 @@ const Footer = () => {
         <section className='footer__section copy'>
           <p>
             &copy;{' '}
-            <a href='https://cristianiniguez.github.io' target='_blank'>
+            <a href='https://www.cristianiniguez.com' target='_blank'>
               Cristian iñiguez
             </a>{' '}
             - 2020
