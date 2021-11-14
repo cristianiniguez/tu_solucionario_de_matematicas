@@ -65,7 +65,7 @@
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @include md {
     .menu {
       position: static;
       height: 100%;
