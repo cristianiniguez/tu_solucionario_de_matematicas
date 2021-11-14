@@ -1,0 +1,18 @@
+@import '../globals';
+
+.header {
+  height: 60px;
+  padding: 0 1rem;
+  box-shadow: $shadow;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;
+
+    .img img {
+      height: 100%;
+    }
+  }
+}

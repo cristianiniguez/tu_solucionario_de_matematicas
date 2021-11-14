@@ -2,29 +2,33 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { FaBars } from 'react-icons/fa';
 
+import styles from '../styles/components/Navbar.module.scss';
+import clsx from 'clsx';
+
 const Navbar = () => {
   const [active, setActive] = useState(false);
 
   return (
-    <nav className={`nav ${active ? 'nav--active' : ''}`}>
-      <ul className='nav-menu'>
-        <li className='nav-menu__item'>
-          <Link className='nav-menu__link' href='/'>
+    // <nav className={`nav ${active ? 'nav--active' : ''}`}>
+    <nav className={clsx(styles.nav, { [styles['nav--active']]: active })}>
+      <ul className={styles.menu}>
+        <li>
+          <Link href='/'>
             <a>Inicio</a>
           </Link>
         </li>
-        <li className='nav-menu__item'>
-          <Link className='nav-menu__link' href='/materias'>
+        <li>
+          <Link href='/materias'>
             <a>Materias</a>
           </Link>
         </li>
-        <li className='nav-menu__item'>
-          <Link className='nav-menu__link' href='/acerca'>
+        <li>
+          <Link href='/acerca'>
             <a>Acerca de</a>
           </Link>
         </li>
       </ul>
-      <button onClick={() => setActive(!active)} className='nav__btn'>
+      <button onClick={() => setActive(!active)} className={styles.btn}>
         <FaBars />
       </button>
     </nav>
