@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/cristianiniguez/tu_solucionario_de_matematicas/issues"
   },
-  "homepage": "https://tu-solucionario-de-matematicas.web.app/"
+  "homepage": "https://tu-solucionario-de-matematicas.web.app/",
+  "devDependencies": {
+    "sass": "^1.43.4"
+  }
 }
