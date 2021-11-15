@@ -17,8 +17,7 @@
   }
 
   a {
-    color: currentColor;
-    text-decoration: none;
+    @include a-norm;
 
     svg {
       margin-right: 0.5rem;
@@ -31,7 +30,6 @@
 
   .social-link {
     margin: 0 1rem;
-
     display: inline-flex;
     align-items: center;
   }
