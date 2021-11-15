@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import Container from './Container';
 import Navbar from './Navbar';
@@ -11,7 +12,13 @@ const Header = () => {
       <Container className={styles.container}>
         <Link href='/'>
           <a className={styles.img}>
-            <img src='/img/logo-tusoldemate.png' alt='Logo de Tu Solucionario de Matemáticas' />
+            <Image
+              src='/img/logo-tusoldemate.png'
+              alt='Logo de Tu Solucionario de Matemáticas'
+              layout='fixed'
+              height={60}
+              width={240}
+            />
           </a>
         </Link>
         <Navbar />

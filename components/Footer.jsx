@@ -14,6 +14,7 @@ const Footer = () => {
               className={styles['social-link']}
               href='https://www.facebook.com/tusolucionariodematematicas'
               target='_blank'
+              rel='noreferrer'
             >
               <FaFacebook />
               <span>Facebook</span>
@@ -22,6 +23,7 @@ const Footer = () => {
               className={styles['social-link']}
               href='https://www.youtube.com/channel/UCfndi4CyqsQc0zRzrMBgiOw'
               target='_blank'
+              rel='noreferrer'
             >
               <FaYoutube />
               <span>Youtube</span>
@@ -31,7 +33,7 @@ const Footer = () => {
         <section>
           <p>
             &copy;{' '}
-            <a href='https://www.cristianiniguez.com' target='_blank'>
+            <a href='https://www.cristianiniguez.com' target='_blank' rel='noreferrer'>
               Cristian iñiguez
             </a>{' '}
             - 2020
