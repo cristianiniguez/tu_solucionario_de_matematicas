@@ -1,0 +1,26 @@
+@import '../globals';
+
+.btn {
+  @include btn-norm;
+
+  font-family: var(--font-titles);
+  font-size: 1rem;
+  min-width: 160px;
+  min-height: 50px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+
+  &--off {
+    background-color: $gray80;
+    color: white;
+  }
+
+  &:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+}

@@ -1,0 +1,59 @@
+@import '../globals';
+
+.hero {
+  background-image: linear-gradient(0deg, white 0%, transparent 10%), url('/img/whiteboard.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 2rem;
+  text-align: center;
+
+  @include md {
+    font-size: 1.25rem;
+  }
+
+  @include lg {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 1rem 0;
+
+    @include md {
+      padding: 2rem 1rem;
+    }
+
+    @include lg {
+      padding: 4rem 1rem;
+    }
+  }
+
+  .title {
+    font-size: 2em;
+  }
+
+  .description {
+    font-weight: bold;
+  }
+
+  .buttons {
+    width: 50%;
+    margin: 0 auto;
+
+    a {
+      @include a-norm;
+    }
+
+    .btn {
+      margin: 1rem;
+    }
+
+    @include md {
+      display: flex;
+      justify-content: center;
+
+      .btn {
+        margin: 1rem 2rem;
+      }
+    }
+  }
+}

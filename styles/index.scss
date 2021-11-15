@@ -1,6 +1,11 @@
 @import './globals';
 
+:root {
+  --font-content: 'Open Sans', sans-serif;
+  --font-titles: 'Comic Neue', cursive;
+}
+
 body {
-  margin: 0;
-  font-family: $content;
+  @include body-norm;
+  font-family: var(--font-content);
 }
