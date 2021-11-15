@@ -1,7 +1,13 @@
+import Seo from '../components/Seo';
 import Layout from '../components/Layout';
 
 const HomePage = () => {
-  return <Layout>Hello</Layout>;
+  return (
+    <>
+      <Seo />
+      <Layout>Hello</Layout>
+    </>
+  );
 };
 
 export default HomePage;
